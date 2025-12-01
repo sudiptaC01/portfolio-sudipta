@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
+import { FaLinkedin } from 'react-icons/fa';
+import { resumeData } from '../data/resume';
 
 const Contact = () => {
     const formRef = useRef();
@@ -17,6 +18,23 @@ const Contact = () => {
             ...formData,
             [e.target.name]: e.target.value
         });
+    };
+
+    const sendEmail = async (data) => {
+        // Use URL-encoded form data instead of JSON to avoid CORS preflight
+        const formBody = new URLSearchParams();
+        formBody.append('name', data.name);
+        formBody.append('email', data.email);
+        formBody.append('message', data.message);
+
+        const response = await fetch("https://script.google.com/macros/s/AKfycbxYIqgH1yzu3yPm5NJz1RHlCZUhQUDRQSWwAwbxVNzo75RE5rwEAbnvf1o0sMLkTQRQBQ/exec", {
+            method: "POST",
+            body: formBody,
+            mode: 'no-cors' // This bypasses CORS but we won't get response details
+        });
+
+        // With no-cors mode, we can't read the response, so we assume success
+        return { status: 'success' };
     };
 
     const handleSubmit = async (e) => {
@@ -54,27 +72,10 @@ const Contact = () => {
         setLoading(true);
 
         try {
-            // EmailJS configuration
-            const serviceId = 'service_portfolio'; // You'll need to replace this
-            const templateId = 'template_portfolio'; // You'll need to replace this
-            const publicKey = 'YOUR_PUBLIC_KEY'; // You'll need to replace this
+            // Send email via Google Apps Script
+            await sendEmail(formData);
 
-            // For now, we'll simulate the email sending
-            // Once you set up EmailJS, uncomment the code below and remove the setTimeout
-
-            /* 
-            await emailjs.sendForm(
-              serviceId,
-              templateId,
-              formRef.current,
-              publicKey
-            );
-            */
-
-            // Simulating email send (remove this setTimeout when EmailJS is configured)
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            // Success toast
+            // Success toast (we assume success with no-cors mode)
             toast.success('Sudipta has been informed that you want to connect!', {
                 duration: 5000,
                 position: 'top-center',
@@ -98,8 +99,8 @@ const Contact = () => {
 
         } catch (error) {
             console.error('Email send error:', error);
-            toast.error('Oops! Something went wrong. Please try again.', {
-                duration: 4000,
+            toast.error('Oops! Something went wrong. Please try again or contact via LinkedIn.', {
+                duration: 5000,
                 position: 'top-center',
                 style: {
                     background: '#ef4444',
@@ -188,6 +189,24 @@ const Contact = () => {
                         </button>
                     </motion.form>
                 </div>
+
+                {/* LinkedIn Fallback */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    className="flex justify-center items-center gap-4 mt-8"
+                >
+                    <p className="text-slate-600 dark:text-slate-400">Or connect with me on:</p>
+                    <a
+                        href={resumeData.social.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-3 rounded-full bg-gray-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:shadow-md transition-all duration-300 hover:scale-110"
+                    >
+                        <FaLinkedin size={24} />
+                    </a>
+                </motion.div>
             </div>
         </div>
     );

@@ -166,30 +166,12 @@ Modify `src/App.jsx` to add or remove sections from the portfolio-sudipta.
 
 The contact form currently uses a placeholder action. To make it functional:
 
-1. **Option 1 - EmailJS** (Optional):
-   - Sign up at [emailjs.com](https://www.emailjs.com/)
-   - Get your service ID, template ID, and public key
-   - Update the Contact component with EmailJS integration
-
-2. **Option 2 - Getform.io** (Optional):
-   - Sign up at [getform.io](https://getform.io/)
-   - Create a form and get your endpoint
-   - Update the form action in `src/components/Contact.jsx`
-
-3. **Option 3 - Formspree** (Optional):
-   - Sign up at [formspree.io](https://formspree.io/)
-   - Get your form endpoint
-   - Update the form action in `src/components/Contact.jsx`
-
+1. **Using Google Apps Script for Sending Email** (Optional):
+   - Go to [script.google.com](https://script.google.com)
+  
 ## 🌐 Environment Variables
 
 If you need environment variables (e.g., for API keys), create a `.env` file:
-```
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
 Access them in your code with `import.meta.env.VITE_*`
 
 ## 📱 Browser Support
