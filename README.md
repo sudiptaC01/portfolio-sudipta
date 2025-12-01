@@ -33,7 +33,7 @@ A modern, responsive portfolio website built with React, Vite, and TailwindCSS, 
 
 1. Clone the repository or navigate to the project directory:
 ```bash
-cd portfolio
+cd portfolio-sudipta
 ```
 
 2. Install dependencies:
@@ -106,7 +106,7 @@ vercel --prod
 ## 📁 Project Structure
 
 ```
-portfolio/
+portfolio-sudipta/
 ├── public/              # Static assets
 ├── src/
 │   ├── assets/
@@ -160,23 +160,23 @@ colors: {
 
 ### Add/Remove Sections
 
-Modify `src/App.jsx` to add or remove sections from the portfolio.
+Modify `src/App.jsx` to add or remove sections from the portfolio-sudipta.
 
 ## 📧 Contact Form Setup
 
 The contact form currently uses a placeholder action. To make it functional:
 
-1. **Option 1 - EmailJS**:
+1. **Option 1 - EmailJS** (Optional):
    - Sign up at [emailjs.com](https://www.emailjs.com/)
    - Get your service ID, template ID, and public key
    - Update the Contact component with EmailJS integration
 
-2. **Option 2 - Getform.io**:
+2. **Option 2 - Getform.io** (Optional):
    - Sign up at [getform.io](https://getform.io/)
    - Create a form and get your endpoint
    - Update the form action in `src/components/Contact.jsx`
 
-3. **Option 3 - Formspree**:
+3. **Option 3 - Formspree** (Optional):
    - Sign up at [formspree.io](https://formspree.io/)
    - Get your form endpoint
    - Update the form action in `src/components/Contact.jsx`
