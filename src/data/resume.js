@@ -118,5 +118,114 @@ export const resumeData = {
     social: {
         linkedin: "https://linkedin.com/in/chakrabortysudipta",
         email: "mailto:sudipta89chakraborty@gmail.com"
+    },
+    credentials: {
+        innovationAwards: [
+            {
+                title: "Microsoft Global Hackathon 2023",
+                subtitle: "Award Winner",
+                description: "Led team of 6 developers",
+                impact: "Demonstrated innovation in product development",
+                year: "2023",
+                category: "Innovation"
+            },
+            {
+                title: "Microsoft Global Hackathon 2021",
+                subtitle: "Award Winner",
+                description: "Led team of 5 developers",
+                impact: "Recognized for technical excellence",
+                year: "2021",
+                category: "Innovation"
+            },
+            {
+                title: "Infosys Global Hackathon 2015",
+                subtitle: "Winner, Pune DC",
+                description: "Innovation in enterprise solutions",
+                impact: "Pioneered automation solutions",
+                year: "2015",
+                category: "Innovation"
+            }
+        ],
+        excellenceAwards: [
+            {
+                title: "Architect of Excellence (ACE) 2022",
+                subtitle: "Best Leadership Team",
+                description: "Recognized for technical leadership",
+                impact: "Led high-performing development teams",
+                year: "2022",
+                category: "Leadership"
+            },
+            {
+                title: "Architect of Excellence (ACE) 2021",
+                subtitle: "Best Team & Star Achiever",
+                description: "FY21 H1 Outstanding Performance",
+                impact: "Delivered exceptional technical solutions",
+                year: "2021",
+                category: "Excellence"
+            }
+        ],
+        microsoftCertifications: [
+            {
+                name: "Azure AI Fundamentals",
+                code: "AI-900",
+                year: "2020",
+                impact: "Validated expertise in AI & Machine Learning"
+            },
+            {
+                name: "MCSA: Web Applications",
+                code: "MCSA",
+                year: "2016",
+                impact: "Certified full-stack web development expertise"
+            },
+            {
+                name: "Developing Azure and Web Services",
+                code: "Exam 487",
+                year: "2014",
+                impact: "Mastered cloud service development"
+            },
+            {
+                name: "Developing ASP.NET MVC Applications",
+                code: "Exam 486",
+                year: "2014",
+                impact: "Expert in enterprise web frameworks"
+            },
+            {
+                name: "Programming in C#",
+                code: "Exam 483",
+                year: "2013",
+                impact: "Core .NET development proficiency"
+            },
+            {
+                name: "HTML5 with JavaScript and CSS3",
+                code: "Exam 480",
+                year: "2012",
+                impact: "Modern web development foundations"
+            }
+        ],
+        professionalCertifications: [
+            {
+                name: "SAFe 4 Agilist",
+                issuer: "Scaled Agile",
+                year: "2019",
+                impact: "Certified in enterprise agile methodologies"
+            }
+        ],
+        leadershipImpact: [
+            {
+                metric: "425+",
+                label: "Engineers Trained",
+                description: "Generative AI & Cloud Development"
+            },
+            {
+                metric: "3x",
+                label: "Hackathon Winner",
+                description: "Innovation & Product Development"
+            },
+            {
+                metric: "Multiple",
+                label: "SME Recognitions",
+                description: "Technical Excellence & Mentorship"
+            }
+        ]
     }
 };
